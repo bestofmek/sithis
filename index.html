@@ -87,6 +87,15 @@ function goBack() {
     document.getElementById("menu").style.display = "block";
 }
 </script>
+
+<script>
+  // Forza Safari a ricaricare la versione più recente
+  window.onload = function() {
+    if(!window.location.search.includes("v=")){
+      window.location.href = window.location.href + "?v=" + Date.now();
+    }
+  }
+</script>    
 </head>
 
 <body>
@@ -234,6 +243,7 @@ Attrezzi: Scegli un tipo di attrezzo da artigiano o uno strumento musicale</p>
 
 </body>
 </html>
+
 
 
 
