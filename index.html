@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sithis Ventargento</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Georgia", serif;
+    background: #f4ecd8;
+    color: #2b1d0e;
+}
+
+header {
+    background: #7a0f0f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.button {
+    display: block;
+    background: #d8c8a5;
+    margin: 12px 0;
+    padding: 14px;
+    border: 2px solid #7a0f0f;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: #2b1d0e;
+}
+
+.button:hover {
+    background: #cbb88f;
+}
+
+.section {
+    display: none;
+}
+
+.back {
+    margin-top: 20px;
+    display: inline-block;
+    color: #7a0f0f;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    border: 4px solid #7a0f0f;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+</style>
+
+<script>
+function showSection(id) {
+    document.getElementById("menu").style.display = "none";
+    let sections = document.getElementsByClassName("section");
+    for (let i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+    }
+    document.getElementById(id).style.display = "block";
+}
+
+function goBack() {
+    let sections = document.getElementsByClassName("section");
+    for (let i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+    }
+    document.getElementById("menu").style.display = "block";
+}
+</script>
+</head>
+
+<body>
+
+<header>SITHIS</header>
+
+<div class="container" id="menu">
+
+<a class="button" onclick="showSection('scheda')">📜 Scheda Personaggio</a>
+<a class="button" onclick="showSection('razza')">🧬 Razza – Mezzelfo</a>
+<a class="button" onclick="showSection('background')">👑 Background – Nobile</a>
+<a class="button" onclick="showSection('classe')">🥋 Classe – Monaco</a>
+<a class="button" onclick="showSection('sottoclasse')">🌪 Via dei Quattro Elementi</a>
+<a class="button" onclick="showSection('abilita')">⚔ Tecniche e Abilità</a>
+<a class="button" onclick="showSection('equip')">🎒 Equipaggiamento</a>
+<a class="button" onclick="showSection('note')">🧠 Note Campagna</a>
+<a class="button" onclick="showSection('regole')">📖 Regole di Riferimento</a>
+
+</div>
+
+<div class="container section" id="scheda">
+<img src="https://i.ibb.co/20HK9VsZ/ritratto.png" alt="Ritratto Sithis">
+<h2>Scheda Personaggio</h2>
+<p>Inserisci qui le caratteristiche principali.</p>
+<span class="back" onclick="goBack()">⬅ Torna al Menu</span>
+</div>
+
+<div class="container section" id="razza">
+<h2>Mezzelfo</h2>
+<p>Descrizione e tratti razziali.</p>
+<p><b>Tratti dei Mezzelfi</b>:
+Il tuo personaggio mezzelfo ha alcune qualità in come
+con gli elfi, e altre che sono uniche ai mezzelfi.
+<hr>
+<b>Allineamento</b>:
+I mezzelfi condividono la propensione alla caos del loro
+retaggio elfico. Danno valore sia alla libertà personale
+che all’espressione creativa, e non dimostrano alcun
+amore per i leader, né il desiderio di avere dei seguaci.
+Sono irritati dalle regole, si infastidiscono alle richieste
+altrui e spesso risultano inaffidabili, o per lo meno
+imprevedibili.
+<hr>
+<b>Età</b>:
+I mezzelfi raggiungono la maggiore età come gli umani,
+intorno ai 20 anni. Tuttavia vivono molto più a lungo
+degli umani, fino a 180 anni.
+<gr>
+<b>Incremento dei Punteggi di
+Caratteristica</b>:
+Il tuo punteggio di Carisma aumenta di 2. Scegli altri
+due punteggi di caratteristica e aumentali di 1.
+<hr>
+<b>Taglia</b>:
+I mezzelfi sono più o meno della stessa grandezza degli
+umani, intorno ai 150 fino ai 180 cm. La tua taglia è
+Media.
+<hr>
+<b>Velocità</b>:
+La tua velocità base di passeggio è 9 metri.
+<hr>
+<b>Retaggio Fatato
+[Fey Ancestry]</b>:
+Hai vantaggio sui tiri salvezza per non restare
+affascinato, e la magia non ti può far addormentare.
+<hr>
+<b>Scurovisione
+[Darkvision]</b>:
+Con luce fioca puoi vedere fino a 18 metri di distanza
+come se fossi a luce intensa, e nell’oscurità come se
+fosse luce fioca. Nell’oscurità non sei però in grado di
+distinguere i colori, solo tonalità di grigio.
+<hr>
+<b>Versatilità nelle Abilità
+[Skill Versatility]</b>:
+Hai la competenza in due abilità a tua scelta.
+<hr>
+<b>Linguaggi</b>:
+Puoi parlare, leggere e scrivere Comune, Elfico e un
+altro linguaggio aggiuntivo a tua scelta.</p>
+
+<span class="back" onclick="goBack()">⬅ Torna al Menu</span>
+</div>
+
+<div class="container section" id="background">
+<h2>Nobile</h2>
+<p>Descrizione background.</p>
+<span class="back" onclick="goBack()">⬅ Torna al Menu</span>
+</div>
+
+<div class="container section" id="classe">
+<h2>Monaco</h2>
+<p>Abilità base della classe.</p>
+<p></p>
+<span class="back" onclick="goBack()">⬅ Torna al Menu</span>
+</div>
+
+<div class="container section" id="sottoclasse">
+<h2>Via dei Quattro Elementi</h2>
+<p>Tecniche elementali e discipline.</p>
+<span class="back" onclick="goBack()">⬅ Torna al Menu</span>
+</div>
+
+<div class="container section" id="abilita">
+<h2>Tecniche e Abilità</h2>
+<p>Inserisci qui le tue tecniche.</p>
+<span class="back" onclick="goBack()">⬅ Torna al Menu</span>
+</div>
+
+<div class="container section" id="equip">
+<h2>Equipaggiamento</h2>
+<p>Lista equipaggiamento.</p>
+<span class="back" onclick="goBack()">⬅ Torna al Menu</span>
+</div>
+
+<div class="container section" id="note">
+<h2>Note Campagna</h2>
+<p>Annotazioni sessioni.</p>
+<span class="back" onclick="goBack()">⬅ Torna al Menu</span>
+</div>
+
+<div class="container section" id="regole">
+<h2>Regole di Riferimento</h2>
+<p>Appunti su regole importanti.</p>
+<span class="back" onclick="goBack()">⬅ Torna al Menu</span>
+</div>
+
+</body>
+</html>
