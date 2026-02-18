@@ -22,17 +22,23 @@ body {
 }
 
 header {
-    position: fixed;      /* blocca in cima allo schermo */
-    top: 0;               /* distanza 0px dalla cima */
-    left: 0;              /* allinea a sinistra */
-    width: 100%;          /* occupa tutta la larghezza */
-    background: #7a0f0f;  /* tuo colore attuale */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #7a0f0f;
     color: #fff;
     text-align: center;
-    padding: 20px;
+
+    /* centratura verticale */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 70px;        /* fissa altezza header */
     font-size: 28px;
     letter-spacing: 2px;
-    z-index: 1000;        /* sopra tutto il resto */
+    z-index: 1000;
 }
 
 .container {
@@ -109,7 +115,7 @@ function goBack() {
 
 <script>
   // VERSIONE PAGINA PER AGGIORNAMENTO SAFARI-WEBAPP
-  const VERSION = "1.6"; // Cambia numero ad ogni update importante
+  const VERSION = "1.7"; // Cambia numero ad ogni update importante
 
   if (!window.location.search.includes("v=" + VERSION)) {
     window.location.replace(window.location.pathname + "?v=" + VERSION);
@@ -438,6 +444,7 @@ document.addEventListener("touchend", function(e) {
     
 </body>
 </html>
+
 
 
 
