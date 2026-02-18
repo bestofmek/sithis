@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 <title>Sithis Ventargento</title>
 
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -101,13 +102,14 @@ function goBack() {
 </script>
 
 <script>
-  // Forza Safari a ricaricare la versione più recente
-  window.onload = function() {
-    if(!window.location.search.includes("v=")){
-      window.location.href = window.location.href + "?v=" + Date.now();
-    }
+  // VERSIONE PAGINA PER AGGIORNAMENTO SAFARI-WEBAPP
+  const VERSION = "1.4"; // Cambia numero ad ogni update importante
+
+  if (!window.location.search.includes("v=" + VERSION)) {
+    window.location.replace(window.location.pathname + "?v=" + VERSION);
   }
-</script>    
+</script>
+    
 </head>
 
 <body>
@@ -405,8 +407,40 @@ metri e una gittata lunga di 18 metri.
 <p>Appunti su regole importanti.</p>
 </div>
 
+<script>
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener("touchstart", function (e) {
+  touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+document.addEventListener("touchend", function (e) {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+}, false);
+
+function handleSwipe() {
+  const swipeDistance = touchEndX - touchStartX;
+
+  // Funziona solo se:
+  // - Parte dal bordo sinistro (max 40px)
+  // - Swipe verso destra di almeno 80px
+  // - Non sei nella home
+
+  if (
+    touchStartX < 40 &&
+    swipeDistance > 80 &&
+    document.getElementById("home").style.display === "none"
+  ) {
+    goBack();
+  }
+}
+</script>
+    
 </body>
 </html>
+
 
 
 
