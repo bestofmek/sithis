@@ -49,6 +49,18 @@ header {
     background: #cbb88f;
 }
 
+.global-back {
+  position: fixed;
+  top: 20px;
+  left: 15px;
+  background: none;
+  border: none;
+  color: #0A84FF;
+  font-size: 22px;
+  display: none;
+  z-index: 1000;
+}
+
 .section {
     display: none;
 }
@@ -77,6 +89,7 @@ function showSection(id) {
         sections[i].style.display = "none";
     }
     document.getElementById(id).style.display = "block";
+    document.querySelector(".global-back").style.display = "block";
 }
 
 function goBack() {
@@ -85,6 +98,7 @@ function goBack() {
         sections[i].style.display = "none";
     }
     document.getElementById("menu").style.display = "block";
+    document.querySelector(".global-back").style.display = "none";
 }
 </script>
 
@@ -394,8 +408,11 @@ metri e una gittata lunga di 18 metri.
 <span class="back" onclick="goBack()">⬅ Torna al Menu</span>
 </div>
 
+<button class="back-btn global-back" onclick="goBack()">←</button>
+
 </body>
 </html>
+
 
 
 
