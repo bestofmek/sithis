@@ -103,7 +103,7 @@ function goBack() {
 
 <script>
   // VERSIONE PAGINA PER AGGIORNAMENTO SAFARI-WEBAPP
-  const VERSION = "1.4"; // Cambia numero ad ogni update importante
+  const VERSION = "1.5"; // Cambia numero ad ogni update importante
 
   if (!window.location.search.includes("v=" + VERSION)) {
     window.location.replace(window.location.pathname + "?v=" + VERSION);
@@ -408,38 +408,31 @@ metri e una gittata lunga di 18 metri.
 </div>
 
 <script>
-let touchStartX = 0;
-let touchEndX = 0;
+let startX = 0;
+let moved = false;
 
-document.addEventListener("touchstart", function (e) {
-  touchStartX = e.changedTouches[0].screenX;
+document.addEventListener("touchstart", function(e) {
+  startX = e.touches[0].clientX;
+  moved = false;
 }, false);
 
-document.addEventListener("touchend", function (e) {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
+document.addEventListener("touchmove", function(e) {
+  const currentX = e.touches[0].clientX;
+  if (currentX - startX > 80) { // swipe verso destra
+    moved = true;
+  }
 }, false);
 
-function handleSwipe() {
-  const swipeDistance = touchEndX - touchStartX;
-
-  // Funziona solo se:
-  // - Parte dal bordo sinistro (max 40px)
-  // - Swipe verso destra di almeno 80px
-  // - Non sei nella home
-
-  if (
-    touchStartX < 40 &&
-    swipeDistance > 80 &&
-    document.getElementById("home").style.display === "none"
-  ) {
+document.addEventListener("touchend", function(e) {
+  if (moved) {
     goBack();
   }
-}
+}, false);
 </script>
     
 </body>
 </html>
+
 
 
 
